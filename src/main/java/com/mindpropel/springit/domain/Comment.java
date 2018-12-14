@@ -1,8 +1,6 @@
 package com.mindpropel.springit.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +10,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Data
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Comment extends Auditable {
 
     @Id
@@ -22,5 +21,7 @@ public class Comment extends Auditable {
 
     // link
     @ManyToOne
+    @NonNull
     private Link link;
+
 }
